@@ -1,5 +1,7 @@
 # Serde &emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![serde: rustc 1.13+]][Rust 1.13] [![serde_derive: rustc 1.31+]][Rust 1.31]
 
+![rsgx](https://github.com/sammyne/serde/workflows/rsgx/badge.svg?branch=rsgx1.1.2)
+
 [Build Status]: https://img.shields.io/github/workflow/status/serde-rs/serde/CI/master
 [actions]: https://github.com/serde-rs/serde/actions?query=branch%3Amaster
 [Latest Version]: https://img.shields.io/crates/v/serde.svg
