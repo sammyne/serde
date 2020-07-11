@@ -84,7 +84,8 @@
 // Serde types in rustdoc of other crates get linked to here.
 #![doc(html_root_url = "https://docs.rs/serde/1.0.114")]
 // Support using Serde without the standard library!
-#![cfg_attr(not(feature = "std"), no_std)]
+#![no_std]
+//#![cfg_attr(not(feature = "std"), no_std)]
 // Unstable functionality only if the user asks for it. For tracking and
 // discussion of these features please refer to this issue:
 //
@@ -140,6 +141,9 @@
 
 #[cfg(feature = "alloc")]
 extern crate alloc;
+
+#[cfg(feature = "std")]
+extern crate sgx_tstd as std;
 
 /// A facade around all the types we need from the `std`, `core`, and `alloc`
 /// crates. This avoids elaborate import wrangling having to happen in every
@@ -218,7 +222,7 @@ mod lib {
     #[cfg(feature = "std")]
     pub use std::path::{Path, PathBuf};
     #[cfg(feature = "std")]
-    pub use std::sync::{Mutex, RwLock};
+    pub use std::sync::{SgxMutex as Mutex, SgxRwLock as RwLock};
     #[cfg(feature = "std")]
     pub use std::time::{SystemTime, UNIX_EPOCH};
 

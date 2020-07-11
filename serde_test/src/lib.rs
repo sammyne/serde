@@ -144,6 +144,7 @@
 //! # }
 //! ```
 
+#![no_std]
 #![doc(html_root_url = "https://docs.rs/serde_test/1.0.114")]
 #![cfg_attr(feature = "cargo-clippy", allow(renamed_and_removed_lints))]
 #![cfg_attr(feature = "cargo-clippy", deny(clippy, clippy_pedantic))]
@@ -162,6 +163,8 @@
         use_self
     )
 )]
+
+extern crate sgx_tstd as std;
 
 #[macro_use]
 extern crate serde;

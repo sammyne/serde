@@ -12,7 +12,7 @@ readme = "crates-io.md"
 include = ["src/**/*.rs", "crates-io.md", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
 
 [dependencies]
-serde = { version = "1.0.60", path = "../serde" }
+serde = { version = "1.0", path = "../serde" }
 
 [dev-dependencies]
 serde = { version = "1.0", path = "../serde" }
@@ -20,3 +20,7 @@ serde_derive = { version = "1.0", path = "../serde_derive" }
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies.sgx_tstd]
+git         = "https://github.com/apache/teaclave-sgx-sdk"
+rev         = "v1.1.2"
